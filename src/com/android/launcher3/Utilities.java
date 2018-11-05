@@ -137,6 +137,7 @@ public final class Utilities {
     public static final String GRID_ROWS = "pref_grid_rows";
     public static final String HOTSEAT_ICONS = "pref_hotseat_icons";
     public static final String ICON_SIZE = "pref_icon_size";
+    public static final String QSB_SHOW = "pref_qsb_show";
 
     private static final long WAIT_BEFORE_RESTART = 250;
 
@@ -194,6 +195,10 @@ public final class Utilities {
         } catch (Exception e) {
             return preferenceFallback;
         }
+    }
+
+    public static boolean showQsbWidget(Context context) {
+         return getPrefs(context).getBoolean(QSB_SHOW, FeatureFlags.QSB_ON_FIRST_SCREEN);
     }
 
     /**
